@@ -25,7 +25,7 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 - You can either make requests directly from the API using swagger, or use the CesarMusicEmporiumWebApp to make requests
 
 ### UI SCREENSHOT (More screenshots under the Screenshots folder)
-[Imgur](https://i.imgur.com/F3pyJSu.png)
+![Imgur](https://i.imgur.com/F3pyJSu.png)
 
 ## Endpoints
 
