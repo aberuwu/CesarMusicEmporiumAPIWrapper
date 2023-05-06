@@ -17,11 +17,15 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Artists (Get All Artists)
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Albums/byNameOrArtist/radwimps (Gets Album/Artist by name, in this case "radwimps")
 
+
 ### UI DEMO
 - To run the demo app, download CesarMusicEmporiumWebapp solution folders.
 - In visual studio run solutions, it will open the UI in your localhoast browser
 - The UI connects to https://cesarmusicemporiumapi.azurewebsites.net/api/ endpoint to fetch data
 - You can either make requests directly from the API using swagger, or use the CesarMusicEmporiumWebApp to make requests
+
+### UI SCREENSHOT (More screenshots under the Screenshots folder)
+![alt text](https://imgur.com/F3pyJSu)
 
 ## Endpoints
 
