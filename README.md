@@ -4,8 +4,8 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 ## Base URL
 
-Live endpoint URL: https://cesarmusicemporiumapi.azurewebsites.net/api/{Albums/Artists}
-The base URL for local requests is `https://{localhost}/api/{Albums/Artists}`.
+- Live endpoint URL: https://cesarmusicemporiumapi.azurewebsites.net/api/{Albums/Artists}
+- The base URL for local requests is `https://{localhost}/api/{Albums/Artists}`.
 
 ## How to Run Demo App and API
 
