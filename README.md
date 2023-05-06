@@ -4,13 +4,21 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 ## Base URL
 
-The base URL for all requests is `https://{localhost}/api/{Albums/Artists}`.
+Live endpoint URL: https://cesarmusicemporiumapi.azurewebsites.net/api/{Albums/Artists}
+The base URL for local requests is `https://{localhost}/api/{Albums/Artists}`.
 
 ## How to Run Demo App and API
 
-- To run the demo app and Api, downoad the CesarMusicEmporium and CesarMusicEmporiumWebapp solution folders.
-- In visual studio run both solutions at the same time
-- The CesarMusicEmporiumWebApp will need the API to be running in order to retrieve data
+### API JSON RESPONSE DEMO
+- The API is live under https://cesarmusicemporiumapi.azurewebsites.net/api/
+- https://cesarmusicemporiumapi.azurewebsites.net/api/Albums (Get All Albums)
+- https://cesarmusicemporiumapi.azurewebsites.net/api/Artists (Get All Artists)
+- https://cesarmusicemporiumapi.azurewebsites.net/api/byNameOrArtist/radwimps (Gets Album/Artist by name, in this case "radwimps")
+
+### UI DEMO
+- To run the demo app, download CesarMusicEmporiumWebapp solution folders.
+- In visual studio run solutions, it will open the UI in your localhoast browser
+- The UI connects to https://cesarmusicemporiumapi.azurewebsites.net/api/ endpoint to fetch data
 - You can either make requests directly from the API using swagger, or use the CesarMusicEmporiumWebApp to make requests
 
 ## Endpoints
