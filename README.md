@@ -4,13 +4,13 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 ## Base URL
 
-- Live endpoint URL: https://cesarmusicemporiumapi.azurewebsites.net/api/{Albums/Artists}
+- Live endpoint URL: https://cesarmusicemporiumapi.azurewebsites.net/api/Albums / https://cesarmusicemporiumapi.azurewebsites.net/api/Artists
 - The base URL for local requests is `https://{localhost}/api/{Albums/Artists}`.
 
 ## How to Run Demo App and API
 
 ### API JSON RESPONSE DEMO
-- The API is live under https://cesarmusicemporiumapi.azurewebsites.net/api/
+- The API is live under https://cesarmusicemporiumapi.azurewebsites.net/api/ / https://cesarmusicemporiumapi.azurewebsites.net/api/Artists
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Albums (Get All Albums)
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Artists (Get All Artists)
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Albums/byNameOrArtist/radwimps (Gets Album/Artist by name, in this case "radwimps")
