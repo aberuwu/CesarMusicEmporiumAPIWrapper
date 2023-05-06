@@ -218,7 +218,7 @@
         //SEARCH INPUT
         function filterAlbums(searchText) {
             $.ajax({
-                url: "https://localhost:7208/api/Albums/byNameOrArtist/" + encodeURIComponent(searchText),
+                url: "https://cesarmusicemporiumapi.azurewebsites.net/api/Albums/byNameOrArtist/" + encodeURIComponent(searchText),
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
@@ -238,7 +238,7 @@
 
         // API CALL - GET ALBUM DATA
         $.ajax({
-            url: "https://localhost:7208/api/Albums",
+            url: "https://cesarmusicemporiumapi.azurewebsites.net/api/Albums",
             type: "GET",
             dataType: "json",
             success: function (data) {
