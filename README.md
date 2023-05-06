@@ -23,6 +23,7 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 - In visual studio run solutions, it will open the UI in your localhoast browser
 - The UI connects to https://cesarmusicemporiumapi.azurewebsites.net/api/ endpoint to fetch data
 - You can either make requests directly from the API using swagger, or use the CesarMusicEmporiumWebApp to make requests
+- The webapp should run under https://localhost:7046 (or whichever port number your machine is using)
 
 ### UI SCREENSHOT (More screenshots under the Screenshots folder)
 ![Imgur](https://i.imgur.com/F3pyJSu.png)
