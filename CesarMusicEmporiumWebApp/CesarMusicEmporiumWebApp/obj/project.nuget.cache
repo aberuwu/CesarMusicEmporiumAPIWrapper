@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ylLiA02UKXJzoa0IJNLMApNqpvGtc+BT/CerOoSiSnU997UYhKX5oza801y/mDq0G7L16XZfwvuIm6dO7CmCnQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Floppa\\Desktop\\YET ANOTHER TEST\\CesarMusicEmporiumWebApp\\CesarMusicEmporiumWebApp\\CesarMusicEmporiumWebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Floppa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

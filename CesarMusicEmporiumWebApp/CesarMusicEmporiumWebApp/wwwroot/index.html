@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CesarMusicEmporium</title>
+    <style>
+        body {
+            background-color: #222;
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            color: white;
+            margin-left: 1em;
+        }
+        img {
+            width: 80px;
+            float: left;
+            margin-right: 10px;
+            margin-top:5px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-left:2em;
+        }
+
+        .card {
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 10px;
+            width: 300px;
+            background-color: #444;
+            color:white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .card:hover {
+                background-color: #222;
+            }
+
+            .card h2 {
+                margin-top: 0;
+            }
+
+            .card p {
+                margin: 0;
+                line-height: 1.5;
+            }
+
+        .search-input {
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            width: 300px;
+            margin-bottom: 1em;
+            margin-left: 2em;
+        }
+
+            .search-input:focus {
+                outline: none;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .modal-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .modal-close:hover,
+            .modal-close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .modal-json {
+            white-space: pre-wrap;
+        }
+
+
+        .view-raw-button {
+            background-color: #222;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .view-raw-button:hover {
+                background-color: #444;
+            }
+
+            .view-raw-button:focus {
+                outline: none;
+            }
+
+            .view-raw-button:active {
+                background-color: #003d80;
+            }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>CesarMusicEmporium</h1>
+
+    <div>
+        <input type="text" class="search-input" id="search-input" placeholder="Search by album or artist" />
+    </div>
+
+    <div id="album-list" class="card-container"></div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <pre id="modal-json" class="modal-json"></pre>
+        </div>
+    </div>
+
+    <script>
+        function cardClicked(album) {
+            var searchQuery = album.albumName + " " + album.artistName;
+            var googleSearchUrl = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
+            window.open(googleSearchUrl, "_blank");
+        }
+
+        function viewRawClicked(event, album) {
+            event.stopPropagation();
+            var modal = document.getElementById("modal");
+            var modalJson = document.getElementById("modal-json");
+            modal.style.display = "block";
+            modalJson.innerText = JSON.stringify(album, null, 2);
+        }
+
+        //DISPLAY ALBUMS
+        function displayAlbums(data) {
+            var albumList = document.getElementById("album-list");
+
+            albumList.innerHTML = "";
+
+            data.forEach(function (album) {
+                var card = document.createElement("div");
+                card.classList.add("card");
+
+                var viewRawButton = document.createElement("button");
+                viewRawButton.innerText = "View Raw JSON";
+                viewRawButton.className = "view-raw-button";
+
+                viewRawButton.addEventListener("click", function (event) {
+                    viewRawClicked(event, album);
+                });
+
+                var albumImage = document.createElement("img");
+                albumImage.src = "/Assets/coverArt.jpg";
+                albumImage.alt = "Album Image";
+
+                var albumName = document.createElement("h2");
+                albumName.innerText =  album.albumName;
+
+                var artistName = document.createElement("p");
+                artistName.innerText = "Artist Name: " + album.artistName;
+
+                var releaseYear = document.createElement("p");
+                releaseYear.innerText = "Release Year: " + album.releaseYear;
+
+                var genre = document.createElement("p");
+                genre.innerText = "Genre: " + album.genre;
+
+                card.appendChild(albumImage);
+                card.appendChild(albumName);
+                card.appendChild(artistName);
+                card.appendChild(releaseYear);
+                card.appendChild(genre);
+                card.appendChild(viewRawButton);
+
+                card.addEventListener("click", function () {
+                    cardClicked(album);
+                });
+
+                albumList.appendChild(card);
+            });
+        }
+
+        document.querySelector(".modal-close").addEventListener("click", function () {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        //SEARCH INPUT
+        function filterAlbums(searchText) {
+            $.ajax({
+                url: "https://localhost:7208/api/Albums/byNameOrArtist/" + encodeURIComponent(searchText),
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    displayAlbums(data);
+                },
+                error: function (error) {
+                    console.log("Error occurred while fetching data from the CesarMusicEmporium API:", error);
+                }
+            });
+        }
+
+        var searchInput = document.getElementById("search-input");
+        searchInput.addEventListener("input", function (event) {
+            var searchText = event.target.value;
+            filterAlbums(searchText);
+        });
+
+        // API CALL - GET ALBUM DATA
+        $.ajax({
+            url: "https://localhost:7208/api/Albums",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                displayAlbums(data);
+            },
+            error: function (error) {
+                console.log("Error occurred while fetching data from the CesarMusicEmporium API:", error);
+            }
+        });
+    </script>
+
+</body>
+</html>

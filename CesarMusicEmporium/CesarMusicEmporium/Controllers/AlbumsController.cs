@@ -34,5 +34,21 @@ namespace CesarMusicEmporium.Controllers
             }
             return Ok(album);
         }
+
+        [HttpGet("byNameOrArtist/{searchText}")]
+        public ActionResult<IEnumerable<AlbumModel>> GetAlbumsByNameOrArtist(string searchText)
+        {
+            var albums = _dbContext.Albums
+                .Where(a => a.AlbumName.ToLower().Contains(searchText.ToLower()) || a.ArtistName.ToLower().Contains(searchText.ToLower()))
+                .ToList();
+
+            if (albums.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return Ok(albums);
+        }
+
     }
 }
