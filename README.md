@@ -11,10 +11,12 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 ## How to Run Demo App and API
 
-### API JSON RESPONSE DEMO
+### LIVE API ENDPOINT CALL EXAMPLES DEMO
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Albums (Get All Albums)
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Artists (Get All Artists)
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Albums/byNameOrArtist/radwimps (Gets Album/Artist by name, in this case "radwimps")
+- https://cesarmusicemporiumapi.azurewebsites.net/api/Albums/55 (Get Album with Id 55)
+- https://cesarmusicemporiumapi.azurewebsites.net/api/Artists/10 (Get Artist with Id 10)
 
 
 ### UI DEMO
