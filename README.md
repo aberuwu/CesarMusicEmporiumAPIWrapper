@@ -4,7 +4,7 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 ## Base URL
 
-The base URL for all requests is `https://{localhost}/api/`.
+The base URL for all requests is `https://{localhost}/api/{Albums/Artists}`.
 
 ## Endpoints
 
@@ -14,7 +14,7 @@ Returns a list of all music albums in the database.
 
 #### Request
 
-`GET /albums`
+`GET /Albums`
 
 #### Response
 
@@ -28,7 +28,7 @@ The response will be a JSON array of album objects, each containing the followin
 
 #### Example Request
 
-`GET /albums`
+`GET /Albums`
 
 #### Example Response
 
@@ -59,7 +59,7 @@ Returns the details of a specific album, identified by its `albumId`.
 
 #### Request
 
-`GET /albums/{albumId}`
+`GET /Albums/{albumId}`
 
 #### Parameters
 
@@ -91,13 +91,60 @@ The response will be a JSON object containing the following fields:
 }
 ```
 
+### Get Album by NameOrArtist
+
+Returns the details of a specific album, identified by a given `stringQuery` parameter.
+
+#### Request
+
+`GET /Albums/byNameOrArtist/{searchText}`
+
+#### Parameters
+
+- `searchText` (string): search parameter in string format
+
+#### Response
+
+The response will be a JSON object containing the following fields:
+
+- `albumId` (integer): the unique identifier for the album
+- `albumName` (string): the name of the album
+- `artistName` (string/array): the name of the artist(s)
+- `releaseYear` (integer): the year the album was released.
+- `genre` (string): the genre of the album
+
+#### Example Request
+
+`GET /Albums/byNameOrArtist/official`
+
+#### Example Response
+
+```json
+[
+  {
+    "albumId": 10,
+    "albumName": "Traveler",
+    "artistName": "Official HIGE DANDism",
+    "releaseYear": 2019,
+    "genre": "Pop"
+  },
+  {
+    "albumId": 20,
+    "albumName": "Vivarium",
+    "artistName": "Official HIGE DANDism",
+    "releaseYear": 2021,
+    "genre": "Pop"
+  }
+]
+```
+
 ### Get All Artists
 
 Returns a list of all music artists/groups in the database.
 
 #### Request
 
-`GET /artists`
+`GET /Artists`
 
 #### Response
 
@@ -111,7 +158,7 @@ The response will be a JSON array of artist objects, each containing the followi
 
 #### Example Request
 
-`GET /artists`
+`GET /Artists`
 
 #### Example Response
 
@@ -140,7 +187,7 @@ Returns the details of a specific artist, identified by their `artistId`.
 
 #### Request
 
-`GET /artists/{artistId}`
+`GET /Artists/{artistId}`
 
 #### Parameters
 
@@ -157,7 +204,7 @@ The response will be a JSON object containing the following fields:
 
 #### Example Request
 
-`GET /artists/1`
+`GET /Artists/1`
 
 #### Example Response
 
