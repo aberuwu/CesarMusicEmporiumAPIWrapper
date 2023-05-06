@@ -6,6 +6,13 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 The base URL for all requests is `https://{localhost}/api/{Albums/Artists}`.
 
+## How to Run Demo App and API
+
+- To run the demo app and Api, downoad the CesarMusicEmporium and CesarMusicEmporiumWebapp solution folders.
+- In visual studio run both solutions at the same time
+- The CesarMusicEmporiumWebApp will need the API to be running in order to retrieve data
+- You can either make requests directly from the API using swagger, or use the CesarMusicEmporiumWebApp to make requests
+
 ## Endpoints
 
 ### Get All Albums
