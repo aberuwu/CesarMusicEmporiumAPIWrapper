@@ -19,8 +19,10 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 - https://cesarmusicemporiumapi.azurewebsites.net/api/Artists/10 (Get Artist with Id 10)
 
 
-### UI DEMO
+### UI DEMO LIVE
 - To run the deomo app LIVE: https://cesarmusicemporiumwebapp.azurewebsites.net/
+
+### UI DEMO LOCAL
 - To run the demo app LOCAL, download CesarMusicEmporiumWebapp solution folders.
 - In visual studio run solutions, it will open the UI in your localhoast browser
 - The UI connects to https://cesarmusicemporiumapi.azurewebsites.net/api/ endpoint to fetch data
