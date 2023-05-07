@@ -20,7 +20,7 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 
 ### UI DEMO LIVE
-- To run the deomo app LIVE: https://cesarmusicemporiumwebapp.azurewebsites.net/
+- To run the deomo app LIVE: https://cesarmusicemporiumwebapp.azurewebsites.net/ (I'm running a low bandwith shared azure resource, so it might take a second or two to load in for the first time)
 
 ### UI DEMO LOCAL
 - To run the demo app LOCAL, download CesarMusicEmporiumWebapp solution folders.
