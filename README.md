@@ -20,7 +20,8 @@ Welcome to the CesarMusicEmporium API! This API provides access to music albums 
 
 
 ### UI DEMO
-- To run the demo app, download CesarMusicEmporiumWebapp solution folders.
+-To run the deomo app LIVE: https://cesarmusicemporiumwebapp.azurewebsites.net/
+- To run the demo app LOCAL, download CesarMusicEmporiumWebapp solution folders.
 - In visual studio run solutions, it will open the UI in your localhoast browser
 - The UI connects to https://cesarmusicemporiumapi.azurewebsites.net/api/ endpoint to fetch data
 - You can either make requests directly from the API using swagger, or use the CesarMusicEmporiumWebApp to make requests
